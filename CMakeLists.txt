@@ -9,8 +9,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 option(BUILD_SHARED_LIBS "Build using shared libraries" OFF)
 
 include_directories(${CMAKE_SOURCE_DIR})
-include_directories(${CMAKE_SOURCE_DIR}/deps)
+include_directories(${CMAKE_SOURCE_DIR}/dep)
 
-link_directories(${CMAKE_SOURCE_DIR}/deps/tinyxml/lib)
+link_directories(${CMAKE_SOURCE_DIR}/dep/tinyxml/lib)
 
 add_subdirectory(common)
