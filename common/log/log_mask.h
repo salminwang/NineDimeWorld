@@ -1,10 +1,11 @@
 #pragma once
 #include <stdint.h>
-namespace Astra {
+namespace Astra
+{
 
-class LogIDMask {
-public:
-	static bool IsLogPermit(int log_priority);
-
-};
-}
+	class LogIDMask
+	{
+	public:
+		static bool IsLogPermit(int log_priority);
+	};
+} // namespace Astra

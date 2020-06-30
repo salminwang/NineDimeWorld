@@ -2,9 +2,14 @@
 
 #include "framework/base_server.h"
 
-namespace Astra {
+namespace Astra
+{
 
-class GameServer : public BaseServer {
-public:
-};
-}
+    class GameServer : public BaseServer
+    {
+    public:
+        GameServer() : BaseServer("gamesvr")
+        {
+        }
+    };
+} // namespace Astra

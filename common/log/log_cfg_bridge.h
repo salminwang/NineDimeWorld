@@ -8,26 +8,30 @@
 namespace Astra
 {
 
-typedef std::shared_ptr<LogCfg> LogConfigSharedPtr;
+	typedef std::shared_ptr<LogCfg> LogConfigSharedPtr;
 
-class LogCfgBridgeInstance : public Singleton<LogCfgBridgeInstance> {
-public:
-	LogCfgBridgeInstance();
-	void Update(const LogCfg& log_cfg);
-	LogConfigSharedPtr GetLogBasePtr();
-private:
-	LogConfigSharedPtr m_logcfg_Ptr;
-	RWLock m_rwlock;
-};
+	class LogCfgBridgeInstance : public Singleton<LogCfgBridgeInstance>
+	{
+	public:
+		LogCfgBridgeInstance();
+		void Update(const LogCfg &log_cfg);
+		LogConfigSharedPtr GetLogBasePtr();
 
-class LogCfgBridge : public Singleton<LogCfgBridge, true> {
-public:
-	LogCfgBridge();
-	void Update();
-	uint32_t GetPriority();
-	const LogCfg* GetLogCfg();
-private:
-	LogConfigSharedPtr m_logcfg_Ptr;
-	RWLock m_rwlock;
-};
-}
+	private:
+		LogConfigSharedPtr m_logcfg_Ptr;
+		RWLock m_rwlock;
+	};
+
+	class LogCfgBridge : public Singleton<LogCfgBridge, true>
+	{
+	public:
+		LogCfgBridge();
+		void Update();
+		uint32_t GetPriority();
+		const LogCfg *GetLogCfg();
+
+	private:
+		LogConfigSharedPtr m_logcfg_Ptr;
+		RWLock m_rwlock;
+	};
+} // namespace Astra
